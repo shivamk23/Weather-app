@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+        
+    <style>
+        .card {
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: transparent; /* Set the card's background to transparent */
+            backdrop-filter: blur(8px); /* Add blur effect to the card's background */
+            opacity: 0.8; /* Adjust overall opacity for the card */
+        }
+
+        /* Add different background colors to each card */
+        .card:nth-child(1) {
+            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent light red */
+        }
+
+
+
+
+
+
+        /* Add more styles as needed */
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Weather App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul> -->
+                <form class="d-flex" role="search">
+                    <input id="city" class="form-control me-2 " type="search" placeholder="Search You City..." aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<div class="container">
+    <h1 class="my-4 text-center">Weather for <span id="cityName">Delhi</span></h1>
+    <main>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">London</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title"><span id="ltemp1"></span><small class="text-muted fw-light">&#8451</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Temperature : <span id="ltemp"></span> &#8451</li>
+                            <li>Humidity : <span id="lhumidity"></span> %</li>
+                            <li>Wind Speed : <span id="lwind_speed"></span> Km/h</li>
+
+                            
+                        </ul>
+                        <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal" id="cityName1">Delhi</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title"><span id="temp1"></span><small class="text-muted fw-light">&#8451</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Temperature : <span id="temp"></span> &#8451</li>
+                            <li>Humidity : <span id="humidity"></span> %</li>
+                            <li>Wind Speed : <span id="wind_speed"></span> Km/h</li>
+
+                            
+                        </ul>
+                        <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+                    </div>
+                </div>
+            </div>
+            
+        
+
+
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                    <div class="card-header py-3  ">
+                        <h4 class="my-0 fw-normal">New York</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title"><span id="ntemp1"></span><small class="text-muted fw-light"> &#8451</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            
+                            <li>Temperature : <span id="ntemp"></span> &#8451</li>
+                            <li>Humidity : <span id="nhumidity"></span> %</li>
+                            <li>Wind Speed : <span id="nwind_speed"></span> Km/h</li>
+                            
+                        </ul>
+                        <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>                    </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="display-6 text-center mb-" id="clock">8:10:45</h2>
+
+        <div class="table-responsive">
+            <table class="table text-center">
+                <thead>
+                    <tr>
+                        <th style="width: 23%;"></th>
+                        
+                        <th style="width: 22%;">Temp</th>
+                        <th style="width: 22%;">Humidity</th>
+                        
+                        <th style="width: 22%;">Sunrise</th>
+                        <th style="width: 22%;">Sunset</th>
+                        
+                        
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" class="text-start city">1. Chandigarh</th>
+
+                        <!-- <td><span id="temp"></span></td> -->
+                        <td><span id="ctemp"></span> &#8451</td>
+                        <td><span id="chumidity"></span> %</td>
+                        <td><span id="csunrise"></span></td>
+                        <td><span id="csunset"></span></td>
+                        
+                        
+                    
+
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-start">2. Assam</th>
+                        <!-- <td><span id="temp"></span></td> -->
+                        <td><span id="atemp"></span> &#8451</td>
+                        <td><span id="ahumidity"></span> %</td>
+                        <td><span id="asunrise"></span></td>
+                        <td><span id="asunset"></span></td>
+                        
+                        
+
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr>
+                        <th scope="row" class="text-start">3. Gandhinagar</th>
+
+                            
+                        <!-- <td><span id="temp"></span></td> -->
+                        <td><span id="gtemp"></span> &#8451</td>
+                        <td><span id="ghumidity"></span> %</td>
+                         <td><span id="gsunrise"></span></td>
+                        <td><span id="gsunset"></span></td>
+                           
+
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-start">4. Lucknow</th>
+                      
+
+                        <!-- <td><span id="temp"></span></td> -->
+                        <td><span id="Ltemp"></span> &#8451</td>
+                        <td><span id="Lhumidity"></span> %</td>
+                        <td><span id="Lsunrise"></span></td>
+                        <td><span id="Lsunset"></span></td>
+                            
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-start">5. Chennai</th>
+
+                        <!-- <td><span id="temp"></span></td> -->
+
+
+                        <td><span id="Ctemp"></span> &#8451</td>
+                        <td><span id="Chumidity"></span> %</td>
+                        <td><span id="Csunrise"></span></td>
+                        <td><span id="Csunset"></span></td>
+                            
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+<script>
+    function swapCardsOnMobileView() {
+      const card1 = document.querySelector('.col:nth-child(1)');
+      const card2 = document.querySelector('.col:nth-child(2)');
+    
+      if (window.innerWidth <= 767) {
+        card1.parentNode.insertBefore(card2, card1);
+      } else {
+        card2.parentNode.insertBefore(card1, card2);
+      }
+    }
+    
+    // Call the function on page load and on window resize
+    window.addEventListener('load', swapCardsOnMobileView);
+    window.addEventListener('resize', swapCardsOnMobileView);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script src="clock.js"></script>
+</body>
+
+</html>
+
+
